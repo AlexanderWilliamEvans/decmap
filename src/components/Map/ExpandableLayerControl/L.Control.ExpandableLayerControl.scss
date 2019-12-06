@@ -1,0 +1,110 @@
+// In order to enable the generic button styles for buttons inside the map
+// add the page class to the line below.
+.case-details, .case-wizard-summary, .case-wizard-map-page, .aoi-edit, .case-tool,
+.organization-details-page {
+  #map, #limit-map {
+
+    // Overrides the default style for draw actions.
+    // We want the buttons to look more like the tooltip in color since
+    // they will be more visible this way.
+    .leaflet-draw-actions a {
+      background-color: rgba(0,0,0,0.7);
+    }
+    .leaflet-draw-actions a:hover {
+      background-color: rgba(0,0,0,1);
+    }
+
+    #control-bar {
+      .easy-button-button {
+        /* Lets overwrite some default styles*/
+        padding: 0; /* Negate bootstrap */
+        border: 0;
+        margin: 0;
+        display: block;
+        height: 26px;
+        width: 26px;
+        background-color: #fff;
+        color: black;
+        border-bottom: 1px solid #ccc;
+        /* Overwrite default glyphicons styling*/
+        [class^="glyphicons-"] {
+          zoom: 0.85;
+          -moz-transform: scale(0.85);
+          -moz-transform-origin: 0 0;
+        }
+        /* Overwrite default glyphicons styling*/
+        .custom-path-line {
+          zoom: 0.85;
+          -moz-transform: scale(0.85);
+          -moz-transform-origin: 0 0;
+          vertical-align: middle;
+        }
+        /* Overwrite default fa-awesome styling*/
+        .fa {
+          font-size: 1.5em;
+        }
+
+        &:hover {
+          background-color: #dedede;
+        }
+
+        &.active {
+          background-color: #bbb;
+        }
+
+        &:disabled {
+          cursor: default;
+          pointer-events: none;
+          background-color: #bbb;
+          color: #dedede;
+        }
+
+        &:last-child {
+          border-bottom-left-radius: 2px;
+          border-bottom-right-radius: 2px;
+        }
+
+        &:first-child {
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
+        }
+      }
+    }
+
+    .leaflet-control-zoom {
+      left: 0px;
+      margin-bottom: 30px;
+      a {
+        &:hover {
+          background-color: #dedede;
+        }
+      }
+    }
+  }
+}
+
+.imgDrawHelp {
+  width: 100px;
+}
+
+.expandable-layer-control-container {
+  .expandable-layer-title {
+    display: inline-block;
+    float: left;
+    padding: 5px 20px 5px 2px;
+    font-weight: bold;
+  }
+
+  .expandable-layer-collapse {
+    float: right;
+    display: inline-block;
+    padding: 5px;
+    color: black;
+    cursor: pointer;
+
+    &:active, &:hover, &:focus {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
