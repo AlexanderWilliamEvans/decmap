@@ -1,0 +1,19 @@
+#map {
+  min-height: 89vh;
+  min-width: 100%;
+  z-index: 0;
+}
+
+.leaflet-container {
+  position: relative;
+  max-height: 70%;
+  outline: none;
+}
+
+.leaflet-control-zoom a {
+  color: #333 !important;
+}
+
+.leaflet-touch .geocoder-control-input {
+
+}

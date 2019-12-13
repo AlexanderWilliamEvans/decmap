@@ -1,0 +1,16 @@
+.gridDraw-control {
+
+}
+
+.gridDraw-icon {
+    background-color: #ffffff;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    width:30px;
+    height:30px;
+    display: block;
+}
+
+.gridDraw-icon:hover {
+    cursor:pointer;
+}
