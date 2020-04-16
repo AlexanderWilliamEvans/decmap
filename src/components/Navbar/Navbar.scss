@@ -1,11 +1,30 @@
 
 .bontrax-navbar {
   height:6vh;
-  padding:1em;
-  background-color:#3db0c7;
+  padding:20px;
+  background-color:cadetblue;
   z-index:99999999999;
   clear:both;
   top:0;
+}
+
+.navbar-title-container {
+  float:left;
+  padding:16px;
+
+  span {
+    color: white;
+    text-align:center;
+    font-family: 'Avenir Light', Verdana, Geneva, sans-serif;
+  }
+}
+.navbar-title-header {
+  font-weight:bold;
+  font-size: 20px;
+}
+
+.navbar-title-sub-header {
+  font-size: 14px;
 }
 
 .bontrax-navbar h3 {
@@ -16,7 +35,7 @@
 }
 
 .bontrax-navbar ul {
-  float:left;
+  float: right;
   margin-left: 1em;
   list-style-type: none;
   margin:0;
@@ -28,12 +47,17 @@
   float:left;
   font-size:medium;
   border-right:1px solid white;
+  font-family: 'Avenir Light', Verdana, Geneva, sans-serif;
 }
 
 .bontrax-navbar li:hover {
-  background:white;
+  background:grey;
+  cursor:pointer;
 
   a{
+    color:black;
+  }
+  svg {
     color:black;
   }
 }
@@ -41,7 +65,8 @@
 .bontrax-navbar li a {
   display:block;
   color: white;
+  font-weight:bold;
   text-align:center;
-  padding:16px;
+  padding:0px 16px;
   text-decoration:none;
 }

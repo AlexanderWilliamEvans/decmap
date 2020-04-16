@@ -1,0 +1,134 @@
+$threshold-lg: 1200px;
+$threshold-md: 992px;
+$threshold-sm: 768px;
+
+$width-lg: 460px;
+$width-md: 390px;
+$width-sm: 305px;
+$width-xs: 100%;
+
+$transition-duration: 0.5s;
+
+@mixin border-radius($border-radius) {
+    -webkit-border-radius: $border-radius;
+    border-radius: $border-radius;
+}
+
+@mixin box-sizing($box-sizing) {
+    -webkit-box-sizing: $box-sizing;
+    -moz-box-sizing: $box-sizing;
+    box-sizing: $box-sizing;
+}
+
+@mixin widths($width) {
+    width: $width;
+
+    &.left.visible ~ .leaflet-left {
+        left: $width;
+    }
+
+    &.right.visible ~ .leaflet-right {
+        right: $width;
+    }
+}
+
+.sidebar-icon {
+    background-color: #ffffff;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    width:30px;
+    height:30px;
+    display: block;
+}
+
+.sidebar-icon:hover {
+    cursor:pointer;
+}
+
+
+.sidebar-select-active {
+    background-color: cadetblue;
+}
+
+.leaflet-sidebar-menu {
+    position: absolute;
+    height: 100%;
+
+    @include box-sizing(border-box);
+    padding: 10px;
+
+     margin: 1em;
+    width:0;
+    //margin-left: 25%;
+    z-index: 999999999999999999999;
+    position: absolute;
+    opacity: 0;
+    right: -500px;
+    -webkit-transition: right $transition-duration, width $transition-duration;
+    -moz-transition: right $transition-duration, width $transition-duration;
+    -ms-transition: right $transition-duration, width $transition-duration;
+    -o-transition: right $transition-duration, width $transition-duration;
+    transition: right $transition-duration, width $transition-duration;
+    float: right;
+    padding-left: 0;
+
+        &.sidebar-open {
+            right: 0;
+        }
+}
+
+/*.sidebar-open {
+    opacity:1;
+    min-width: 20px;
+    width:auto;
+    height: 95%;
+}*/
+
+
+
+@keyframes fadeIn{
+    0% {
+        opacity:0;
+        width:0;
+    }
+    100% {
+        opacity:1;
+        width:50%;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}

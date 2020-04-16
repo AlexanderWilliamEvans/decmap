@@ -16,6 +16,10 @@ import { addExpandableLayerControl } from "../ExpandableLayerControl/L.Control.E
 import { addGeoLocation } from '../GeoLocation/GeoLocation';
 import { addGridDraw } from '../GridDraw/L.Control.GridDraw';
 import { addCustomControl } from '../ExpandableLayerControl/CustomLayerControl/CustomLayerControl';
+import { addSidebar } from '../Sidebar/L.Control.Sidebar';
+import { addRoutingMachine } from '../routing-machine/routing-machine';
+import { addPinpoint } from '../pinpoint/pinpoint';
+import { addToolbox } from '../toolbox/toolbox';
 /**
  *
  * * Summary: A leaflet map with multiple controls, redux and hooks.
@@ -110,6 +114,7 @@ export default function MapContainer(props) {
             selectOptions, selectFunction
         });
         L.control.scale({ position: 'bottomright' }).addTo(map.current);
+        addToolbox(map.current, null);
         L.control.fullscreen({ position: 'topleft', title: 'Helskärmsläge' }).addTo(map.current);
 
         //Custom controls, just for RC.
@@ -121,8 +126,10 @@ export default function MapContainer(props) {
         addCustomControl(map.current, baseMaps);
         addLayerControl(map.current, null);
         addGeoLocation(map.current, null);
+        addRoutingMachine(map.current, null);
+        addPinpoint(map.current, null);
         addGridDraw(map.current);
-
+        addSidebar(map.current);
         // Customs Controls added to map.
       //  addMarkerCluster(markers, 'caseType').addTo(map.current);
 

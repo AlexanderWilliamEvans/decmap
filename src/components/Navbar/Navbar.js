@@ -1,6 +1,6 @@
 import React, { Fragment} from 'react';
 import {BrowserRouter, Link, Switch, Route} from 'react-router-dom';
-import { MdInfo } from 'react-icons/md';
+import { MdInfo, MdHome } from 'react-icons/md';
 import { DiCode } from 'react-icons/di';
 import './Navbar.scss';
 import Home  from '../../pages/Home/Home';
@@ -13,16 +13,16 @@ export default function Navbar(){
         <BrowserRouter>
             <Fragment>
                 <nav className="bontrax-navbar">
-                    <ul className="bontrax-navbar-pages">
-                        <li>DevMap</li>
-                        <li><Link to="/" className="bontrax-links">Home</Link></li>
-                        <li><Link to="/Documentation" className="bontrax-links">Documentation</Link></li>
-                        <li><Link to="/About" className="bontrax-links">About</Link></li>
-                    </ul>
-                    <div style={{float:'right'}}>
-                        <span><MdInfo style={{color:'white', height:'2em', width:'2em'}}/>></span>
-                        <span><Link to="/"><DiCode style={{color:'white', height:'2em', width:'3em'}}/></Link></span>
+                    <div className="navbar-title-container">
+                    <span className="navbar-title-header">SamverksKartan</span>
+                    <br/>
+                    <span className="navbar-title-sub-header"><i>-Den gemensamma kartan</i></span>
                     </div>
+                    <ul className="bontrax-navbar-pages">
+                        <li><MdHome style={{color:'white', height:'2em', width:'2em'}}/><Link to="/" className="bontrax-links">Home</Link></li>
+                        <li><DiCode style={{color:'white', height:'2em', width:'3em'}}/><Link to="/Documentation" className="bontrax-links">Documentation</Link></li>
+                        <li><MdInfo style={{color:'white', height:'2em', width:'2em'}}/><Link to="/About" className="bontrax-links">About</Link></li>
+                    </ul>
                 </nav>
                 <Switch>
                     <Route exact path="/" component={ Home } />
